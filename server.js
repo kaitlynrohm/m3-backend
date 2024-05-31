@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 app.use(chatBox);
 
 // ============== PORT ============== //
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT;
 app
   .listen(PORT, () => {
     console.log(`Server is alive on http://localhost:${PORT}`);
