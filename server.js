@@ -8,7 +8,23 @@ require("dotenv").config();
 const chatBox = require("./routes/chatBox.js");
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  // Add any frontend urls that will need to access the apis
+  "https://delightful-mud-099cd9600.5.azurestaticapps.net",
+  "http://localhost:5173", //vite on local
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // =========== ENDPOINTS =========== //
