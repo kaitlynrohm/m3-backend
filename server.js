@@ -6,6 +6,7 @@ require("dotenv").config();
 
 //Import routes
 const chatBox = require("./routes/chatBox.js");
+const geminiConnection = require("./routes/geminiConnection.js");
 
 // Middleware
 const allowedOrigins = [
@@ -35,6 +36,9 @@ app.get("/", (req, res) => {
 
 // chat box endpoint
 app.use(chatBox);
+
+// Gemini connection end point
+app.use(geminiConnection);
 
 // ============== PORT ============== //
 const PORT = process.env.PORT;
