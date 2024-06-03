@@ -6,7 +6,6 @@ const {
   safetySettings,
 } = require("../config/modelConfig.js");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const axios = require("axios");
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
