@@ -5,7 +5,7 @@ const app = express();
 require("dotenv").config();
 
 //Import routes
-const chatBox = require("./routes/chatBox.js");
+const feedbackRouter = require("./routes/feedbackRoutes.js");
 const geminiConnection = require("./routes/geminiConnection.js");
 
 // Middleware
@@ -34,10 +34,7 @@ app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
-// chat box endpoint
-app.use(chatBox);
-
-// Gemini connection end point
+app.use(feedbackRouter);
 app.use(geminiConnection);
 
 // ============== PORT ============== //
