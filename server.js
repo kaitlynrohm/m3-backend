@@ -31,11 +31,17 @@ app.use(express.json());
 // =========== ENDPOINTS =========== //
 // Initial setup in Postman
 app.get("/", (req, res) => {
+  console.log("root endpoint hit");
   res.send("Hello, World!");
 });
 
 app.use(feedbackRouter);
 app.use(geminiConnection);
+app.use((req, res, next) => {
+  console.log("Received request with headers:", req.headers);
+  console.log("Received request with body:", req.body);
+  next();
+});
 
 // ============== PORT ============== //
 const PORT = process.env.PORT;

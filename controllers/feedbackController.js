@@ -18,6 +18,7 @@ const constructSystemInstruction = (title, history) => {
 
 module.exports.postFeedback = async (req, res) => {
   const { title, history } = req.body;
+  console.log(req.body);
   if (!history) {
     return res.status(400).json({ error: "No conversation history received" });
   }
@@ -25,7 +26,10 @@ module.exports.postFeedback = async (req, res) => {
     return res.status(400).json({ error: "No job title received" });
   }
 
-  const systemInstruction = constructSystemInstruction(title, history);
+  const systemInstruction = constructSystemInstruction(
+    title,
+    JSON.stringify(history)
+  );
   const model = genAI.getGenerativeModel({
     model: modelVersion,
     generationConfig,
@@ -44,7 +48,6 @@ module.exports.postFeedback = async (req, res) => {
         .status(500)
         .json({ feedback: "The model couldn't generate feedback." });
     }
-    console.log(text);
     return res.status(200).json({ feedback: text });
   } catch (error) {
     console.error("Error generating content:", error);
