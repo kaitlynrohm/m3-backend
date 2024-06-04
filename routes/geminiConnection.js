@@ -20,10 +20,10 @@ router.post("/api/gemini-connection", async (req, res) => {
   if (result === true || message === "begin") {
     // Use function from controller
     geminiConnection(message, history, title).then((result) => {
-      res.send(result);
+      res.status(200).send(result);
     });
   } else {
-    res.send(result);
+    res.status(422).send(result);
   }
 });
 
