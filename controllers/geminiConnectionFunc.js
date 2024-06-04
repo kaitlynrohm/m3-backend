@@ -19,7 +19,7 @@ const geminiConnection = async (message, history, title) => {
     Due to restructuring a lot of staff will need to be re-trained into different rolls within the company.
     You are Zane, an executive at Turners Car Insurance.
     You are interviewing an employee for a ${title} role.
-    Start by asking, "Tell me about yourself." Then ask at least 6 questions relevant to the role. Adjust your questions based on the user's responses`,
+    Start by asking, "Tell me about yourself." Then ask at least 6 questions relevant to the role. Adjust your questions based on the user's responses. Do not reference information you don't have.`,
   });
 
   let chat;
@@ -33,7 +33,6 @@ const geminiConnection = async (message, history, title) => {
   const result = await chat.sendMessage(message);
   const response = await result.response;
   const text = response.text();
-  //   console.log(text);
 
   if (text) {
     return text;

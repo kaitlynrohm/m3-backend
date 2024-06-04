@@ -1,6 +1,10 @@
 const inputCheckController = (userInput) => {
   if (userInput.title && userInput.message) {
-    if (userInput.message.length >= 30) {
+    function messageLength(str) {
+      const array = str.trim().split(/\s+/);
+      return array.length;
+    }
+    if (messageLength(userInput.message) >= 30) {
       return true;
     } else {
       return "Error: Message to short";

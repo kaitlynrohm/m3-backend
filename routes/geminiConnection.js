@@ -9,14 +9,22 @@ router.post("/api/gemini-connection", async (req, res) => {
   console.log("Gemini endpoint hit");
   const title = req.body.title;
   let message;
-  req.body.message ? (message = req.body.message) : (message = "begin");
+  !req.body.message && !req.body.history
+    ? (message = "begin")
+    : (message = req.body.message);
+
   const history = req.body.history;
 
-  // Use function from controller
-  geminiConnection(message, history, title).then((result) => {
-    console.log(result);
+  const result = userCheck({ title: title, message: message });
+
+  if (result === true || message === "begin") {
+    // Use function from controller
+    geminiConnection(message, history, title).then((result) => {
+      res.send(result);
+    });
+  } else {
     res.send(result);
-  });
+  }
 });
 
 module.exports = router;

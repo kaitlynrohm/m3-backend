@@ -7,7 +7,6 @@ require("dotenv").config();
 //Import routes
 const feedbackRouter = require("./routes/feedbackRoutes.js");
 const geminiConnection = require("./routes/geminiConnection.js");
-const inputCheck = require("./routes/inputCheck.js");
 
 // Middleware
 const allowedOrigins = [
@@ -37,7 +36,6 @@ app.get("/", (req, res) => {
 
 app.use(feedbackRouter);
 app.use(geminiConnection);
-app.use(inputCheck);
 
 // ============== PORT ============== //
 const PORT = process.env.PORT;
