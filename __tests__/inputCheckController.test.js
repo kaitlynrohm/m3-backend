@@ -18,14 +18,18 @@ describe("Check the input", () => {
         message:
           "When working in a team I ensure that I communicate often and clearly with the others in my team. I do this by frequently requesting feedback on my designs and answering any questions as soon as I can.",
       },
-      false,
+      "Error: No job title",
     ],
     [
       "Message is too short, title is fine",
       { title: "junior developer", message: "I have experience in UX" },
-      false,
+      "Error: Message to short",
     ],
-    ["Message too short, no title", { title: "", message: "" }, false],
+    [
+      "Message too short, no title",
+      { title: "", message: "" },
+      "Error: no job title and no message",
+    ],
   ])(
     "Ensure all tests come back as expected",
     (testCase, userInput, expectedResult) => {

@@ -3,10 +3,18 @@ const inputCheckController = (userInput) => {
     if (userInput.message.length >= 30) {
       return true;
     } else {
-      return false;
+      return "Error: Message to short";
     }
   } else {
-    return false;
+    if (!userInput.message && userInput.title) {
+      return "Error: Message to short";
+    } else if (userInput.message && !userInput.title) {
+      return "Error: No job title";
+    } else if (!userInput.message && !userInput.title) {
+      return "Error: no job title and no message";
+    } else {
+      return "Error";
+    }
   }
 };
 
