@@ -4,7 +4,7 @@ const inputCheckController = (userInput) => {
       const array = str.trim().split(/\s+/);
       return array.length;
     }
-    if (messageLength(userInput.message) >= 2) {
+    if (messageLength(userInput.message) >= 1) {
       return true;
     } else {
       return "Error: Message to short";
