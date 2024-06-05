@@ -20,10 +20,10 @@ module.exports.postFeedback = async (req, res) => {
   const { title, history } = req.body;
   console.log(req.body);
   if (!history) {
-    return res.status(400).json({ error: "No conversation history received" });
+    return res.status(400).send("No conversation history received");
   }
   if (!title) {
-    return res.status(400).json({ error: "No job title received" });
+    return res.status(400).send("No job title received");
   }
 
   const systemInstruction = constructSystemInstruction(
@@ -44,13 +44,11 @@ module.exports.postFeedback = async (req, res) => {
     const response = await result.response;
     const text = await response.text();
     if (!text) {
-      return res
-        .status(500)
-        .json({ feedback: "The model couldn't generate feedback." });
+      return res.status(500).send("The model couldn't generate feedback.");
     }
-    return res.status(200).json({ feedback: text });
+    return res.status(200).send(text);
   } catch (error) {
     console.error("Error generating content:", error);
-    return res.status(500).json({ error: "Failed to generate feedback" });
+    return res.status(500).send("Failed to generate feedback");
   }
 };
