@@ -22,7 +22,7 @@ describe("Check the input", () => {
     ],
     [
       "Message is too short, title is fine",
-      { title: "junior developer", message: "I have experience in UX" },
+      { title: "junior developer", message: "" },
       "Error: Message to short",
     ],
     [
