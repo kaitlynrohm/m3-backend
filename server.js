@@ -7,6 +7,7 @@ require("dotenv").config();
 //Import routes
 const feedbackRouter = require("./routes/feedbackRoutes.js");
 const geminiConnection = require("./routes/geminiConnection.js");
+const insuranceRouter = require("./routes/insuranceRoute.js");
 
 // Middleware
 const allowedOrigins = [
@@ -43,6 +44,7 @@ app.get("/", (req, res) => {
 
 app.use(feedbackRouter);
 app.use(geminiConnection);
+app.use(insuranceRouter);
 app.use((req, res, next) => {
   console.log("Received request with headers:", req.headers);
   console.log("Received request with body:", req.body);
