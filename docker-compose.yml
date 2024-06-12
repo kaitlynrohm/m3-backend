@@ -1,6 +1,8 @@
+version: '3.8'
+
 services:
   frontend:
-    image: docker push m4frontend/samples/hello-world:1.0.0
+    image: mission4.azurecr.io/frontend-image:latest
     ports:
       - "80:80"
     environment:
@@ -9,17 +11,9 @@ services:
       - backend
 
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app
-      - /app/node_modules
+    image: mission4.azurecr.io/backend-image:latest
     ports:
       - "4000:4000"
-    env_file:
-      - .env
-
 
 
 # Old Version
