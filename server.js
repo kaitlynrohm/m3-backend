@@ -14,7 +14,7 @@ const allowedOrigins = [
   // Add any frontend urls that will need to access the apis
   "https://delightful-mud-099cd9600.5.azurestaticapps.net",
   "http://localhost:5173", //vite on local
-  "http://frontend:80",
+  "https://m4-frontend.azurewebsites.net",
 ];
 
 //The callback parameter is a callback function to signal whether the request's origin is allowed

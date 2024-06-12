@@ -12,7 +12,6 @@
 # CMD ["npm", "run", "dev"]
 
 
-
 # Stage 1: Install dependencies
 FROM node:20-alpine3.19 AS builder
 
