@@ -1,0 +1,49 @@
+services:
+  frontend:
+    image: docker push m4frontend/samples/hello-world:1.0.0
+    ports:
+      - "80:80"
+    environment:
+      - VITE_REACT_APP_BACKEND_URL=http://localhost:4000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+
+
+
+# Old Version
+# services:
+#   frontend:
+#     build:
+#       context: ./m3-frontend
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./m3-frontend:/app
+#       - /app/node_modules
+#     ports:
+#       - "5173:5173"
+#     environment:
+#       - VITE_REACT_APP_BACKEND_URL=http://localhost:4000
+#     depends_on:
+#       - backend
+#   backend:
+#     build:
+#       context: ./m3-backend
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./m3-backend:/app
+#       - /app/node_modules
+#     ports:
+#       - "4000:4000"
+#     env_file:
