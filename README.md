@@ -4,7 +4,6 @@
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 ![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 
 ## Description
@@ -28,7 +27,6 @@ This backend needs to be run in conjunction with the project frontend, which is 
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 ![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ## Installation and Setup
 
@@ -61,19 +59,6 @@ This backend needs to be run in conjunction with the project frontend, which is 
    cd ai-chatbot-frontend
    npm install
    npm start
-   ```
-
-## Docker
-
-The application is also dockerized and available on the docker branch. To use Docker, follow these steps:
-
-1. Checkout the docker branch:
-   ```sh
-   git checkout docker
-   ```
-2. Build and run the Docker containers:
-   ```sh
-   docker-compose up --build
    ```
 
 ## Contributors
