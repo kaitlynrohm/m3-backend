@@ -1,0 +1,59 @@
+# AI Interviewer - Backend
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+
+## Description
+
+AI Interviewer is a backend application designed to simulate mock job interviews using Google Generative AI. It generates interview questions and provides feedback based on user input for a specified job title. This tool is intended to help users practice their interview skills and receive constructive feedback.
+
+## Features
+
+- Generate interview questions based on job title
+- Provide feedback on user responses
+- Store and retrieve user interview sessions
+
+## Technologies Used
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![Google Generative AI](https://img.shields.io/badge/Google%20Generative%20AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+
+## Installation and Setup
+
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/nicolegunn/ai-interviewer-backend.git
+2. **Navigate to the project directory**:
+   ```sh
+   cd ai-interviewer-backend
+3. **Install dependencies**: 
+   ```sh
+   npm install
+4. **Create a .env file in the root directory and add your environment variables**:
+   ```env
+   PORT=4000
+   GOOGLE_API_KEY=<your-google-api-key>
+5. **Run the application**:
+   ```sh
+   npm run dev
+## Contributors
+
+### **Nicole Gunn**
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicole-gunn-a582ba23b/)
+  [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nicolegunn)
+
+### **Kaitlyn Rohm**
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kaitlyn-rohm-083612307/)
+  [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kaitlynrohm)
+
+### **Cyrus Wen**
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cyrus-wen/)
+  [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cyy963)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
